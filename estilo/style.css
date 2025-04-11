@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    background-color: #050200;
+    background-image: url(../imagens/stardust.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+.estrelas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.estrelas .img {
+    background-image: url(../imagens/stardust.png);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#imagem1 .img {
+    top: 0%;
+    left: -10%;
+    z-index: -2;
+    animation: estrela1 180s linear infinite;
+}
+#imagem2 {
+    bottom: -10%;
+    left: 25%;
+    z-index: -3;
+    animation: estrela2 200s linear infinite;
+}
+#imagem3 {
+    bottom: 20%;
+    left: 40%;
+    z-index: -2;
+    animation: estrela1 200s linear infinite;
+}
+#imagem4 {
+    bottom: 0%;
+    left: 60%;
+    z-index: -7;
+    animation: estrela2 180s linear infinite;
+}
+main {
+    width: 100%;
+    color: rgb(240, 236, 236);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.044) 1%, rgba(0, 0, 0, 0.778) 20%, rgba(0, 0, 0, 0.052) 200%);
+}
+.icone_seta {
+    cursor: pointer;
+    position: relative;
+    z-index: 4;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.049);
+    border: 1px solid rgb(203, 169, 58);
+}
+.icone_seta:hover {
+    background-color: rgba(255, 255, 255, 0.202);
+}
+.planetas {
+    cursor: grab;
+    padding: 0%;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.011);
+}
+.planetas:hover, .planetas img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+.planetas > img {
+    width: 100%;
+    height:auto;
+}
+#escolha .planetas{
+    width: 30%;
+    min-width: 40px;
+}
+#escolha p{
+    min-width: 60%;
+}
+ #mercurio {
+    animation: girar 50s linear infinite;
+}
+ #venus {
+    animation: girar 80s linear infinite;
+}
+ #jupiter{
+    animation: girar 20s linear infinite;
+}
+ #saturno{
+    animation: girar 20s linear infinite;
+}
+ #urano{
+    animation: girar 30s linear infinite;
+}
+ #netuno {
+    animation: girar 30s linear infinite;
+}
+#espaco {
+    position: relative;
+    max-height: 100vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+#sol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%; 
+    height: 10%;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    filter: drop-shadow(0 0 16px rgba(249, 138, 34, 0.972));
+}
+#sol img {
+    width: 100%;
+    height: auto; 
+    animation: girar 200s linear infinite;
+}
+#terra, #marte, #jupiter,#urano,#netuno{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#marte{
+    animation: girar 45s linear infinite;
+}
+#deimos, #calisto, #tita, #tritao,#gelo{
+    top: 10px;
+    left: -1px;
+}
+#ganimedes{
+    top: 5px;
+    right: -1px;
+    width: 11px;
+    height: 11px;
+}
+#ence{
+    top: 3px;
+    left: -10px;
+}
+#mimas{
+    top: 5px;
+    right: -1px;
+}
+ #terra {
+    animation: girar 40s linear infinite;
+}
+.orbita-lua {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    animation: orbitar 10s linear infinite, girar 3s linear infinite;
+}
+.lua {
+    width: 8px;
+    height: 8px;
+    background-image: url(../imagens/lua.png);
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+#escolha {
+    height: 100vh;
+    max-width: 100%;
+    overflow-y: auto;
+    position: relative;
+    z-index: 4;
+}
+.conteudo-escolha {
+    height: 100%;
+}
+.orbitas {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+#espaco .planetas{
+    position: absolute;
+    top: 45%;
+    left: -2%;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.233));
+}
+#o1 {
+    width: 16vw;
+    height: 16vw;
+    min-width: 100px;
+    min-height: 100px;
+    animation: girarO 3s linear infinite;
+}
+#o2 {
+    width: 23vw;
+    height: 23vw;
+    min-width: 170px;
+    min-height: 170px;
+    animation: girarO 6s linear infinite;
+}
+#o3 {
+    width: 30vw;
+    height: 30vw;
+    min-width: 250px;
+    min-height: 250px;
+    animation: girarO 9s linear infinite;
+}
+#o4 {
+    width: 37vw;
+    height: 37vw;
+    min-width: 330px;
+    min-height: 330px;
+    animation: girarO 12s linear infinite;
+}
+#o5 {
+    width: 45vw;
+    height: 45vw;
+    min-width: 420px;
+    min-height: 420px;
+    animation: girarO 15s linear infinite;
+}
+#o6 {
+    width: 54vw;
+    height: 54vw;
+    min-width: 540px;
+    min-height: 540px;
+    animation: girarO 18s linear infinite;
+}
+#o7 {
+    width: 62vw;
+    height: 62vw;
+    min-width: 630px;
+    min-height: 630px;
+    animation: girarO 21s linear infinite;
+}
+#o8 {
+    width: 68vw;
+    height: 68vw;
+    min-width: 800px;
+    min-height: 800px;
+    animation: girarO 24s linear infinite;
+}
+  #espaco #mercurio { width: 20px;}
+  #espaco #marte    { width: 24px; }
+  #espaco #terra    { width: 29px; }
+  #espaco #venus    { width: 22px; }
+  #espaco #netuno   { width: 35px; }
+  #espaco #urano    { width: 46px; }
+  #espaco #saturno  { width: 47px; }
+  #espaco #jupiter  { width: 40px; }
+
+input{
+    background-color: transparent;
+    border: none;
+    padding: 3px;
+    color: rgb(255, 255, 255);
+}
+
+.conteudo-escolha >div{
+    background-color: rgba(255, 255, 255, 0.058);
+    border: 1px solid rgba(255, 255, 255, 0.161);
+    width: 99%;
+    min-width: 250px;
+}
+#info{
+    width: 290px;
+    z-index: 20;
+    background-color: rgba(7, 7, 7, 0.783);
+    border: 1px solid rgba(255, 255, 255, 0.152);
+}
+#info p{
+    font-size: 18px;
+}
+@keyframes estrela1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(100deg); }
+}
+@keyframes estrela2 {
+    0% { transform: rotate(100deg); }
+    100% { transform: rotate(0deg); }
+}
+@keyframes girar {
+    from{ 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+@keyframes orbitar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes girarO {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@media (max-width: 767px) {
+    .icone_seta {
+        transform: rotate(90deg) !important;
+    }
+}
+@media (min-width: 768px) {
+    #escolha {
+        width: 19%;
+        min-width: 270px;
+    }
+}
+@media (max-width: 768px) {
+    #escolha {
+        height: 35vh;
+    }
+}
