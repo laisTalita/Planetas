@@ -64,11 +64,10 @@ main {
     position: relative;
     z-index: 4;
     border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.049);
-    border: 1px solid rgb(203, 169, 58);
+    background-color: rgba(255, 255, 255, 0.017);
 }
 .icone_seta:hover {
-    background-color: rgba(255, 255, 255, 0.202);
+    background-color: rgba(255, 255, 255, 0.065);
 }
 .planetas {
     cursor: grab;
@@ -191,13 +190,23 @@ main {
 .conteudo-escolha {
     height: 100%;
 }
-.orbitas {
+.orbitas, #explicacao {
     position: absolute;
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
+#explicacao{
+    z-index: 3;
+    font-size: 0.6em;
+    border-radius: 3px;
+    min-width: 210px;
+    overflow: hidden;
+    overflow-y: auto;
+    outline: 1px solid rgba(154, 152, 152, 0.329);
+    outline-offset: 8px;
+}
 #espaco .planetas{
     position: absolute;
     top: 45%;
@@ -275,10 +284,9 @@ input{
     padding: 3px;
     color: rgb(255, 255, 255);
 }
-
 .conteudo-escolha >div{
     background-color: rgba(255, 255, 255, 0.058);
-    border: 1px solid rgba(255, 255, 255, 0.161);
+    border: 1px solid rgba(255, 255, 255, 0.082);
     width: 99%;
     min-width: 250px;
 }

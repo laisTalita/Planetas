@@ -2,51 +2,161 @@ function fechar_abrir(id) {
   const el = document.getElementById(id);
   el.classList.toggle("d-none");
 }
+
+function trocarPlaneta(planeta, novaP) {
+  let planetaLugar= document.getElementById("explicativa")
+  let explicaca = document.getElementById("explicacao")
+  const tipos={
+    "mercurio":"rochoso",
+    "venus": "rochoso",
+    "terra": "rochoso",
+    "marte": "rochoso",
+    "jupiter": "gasoso",
+    "saturno": "gasoso",
+    "urano": "gasoso",
+    "netuno": "gasoso"
+  }
+  const tipo = tipos[planeta]
+
+    if (novaP !=1 && planeta ==='mercurio') {
+      explicaca.classList.remove("d-none")
+
+      planetaLugar.textContent="Mercúrio está sofrendo com a diferença de temperatura, além disso está tendo variação orbital e impactos em sua atmosfera. Planetas mais perto do Sol, podem estar esfriando."
+    }
+    if(planeta === 'venus'){
+      if (novaP <2) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="Venus está com temperatura extrema, a atmosfera está instável e está sofrendo com o efeito estufa"
+      }else if (novaP >=3) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent =" Venus está esfriando gradualmenta, a atmosfera pode começar a congelar ou a colapsar parcialmente."
+      }
+    }
+    if (planeta === 'terra') {
+      if (novaP <3) {
+        explicaca.classList.remove("d-none")
+
+         planetaLugar.textContent =" A Terra está sofrendo um aumento extremo de temperatura e isso afeta drasticamente o ecossistema, causando derretimento das calotas polares."
+      }
+      else if (novaP >= 4) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="A terra está esfriando gradualmente, pode estar enfrentando uma nova era glacial e impacto na vida vegetal e animal."
+      }
+    }
+    if (planeta === 'marte') {
+
+      if (novaP <4) {
+        explicaca.classList.remove("d-none")
+
+         planetaLugar.textContent ="Marte está aquecendo de forma significativa, o que pode derreter o gelo presente e criar instabilidades em sua superfície. Pode estar com possíveis alterações nas suas luas e na sua relação com outros planetas."
+      }
+      else if (novaP >= 5) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="Marte está se tornando ainda mais frio e inóspito, dificultando qualquer tentativa de colonização."
+      }
+    }
+    if (planeta === 'jupiter') {
+
+      if (novaP <5 ) {
+        explicaca.classList.remove("d-none")
+
+         planetaLugar.textContent ="Júpiter está sofrendo com a grande pressão atmosférica e alterações em suas luas, o que pode afetar o clima do planeta. Planetas próximos a Júpiter podem estar sendo impactados pela sua grande gravidade."
+      }
+      else if (novaP >= 6) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="Júpiter ainda tem grandes tempestades e variações de climas devido à sua imensa atmosfera e presença de várias luas. Além de estar enfrentando um esfriamento"
+      }
+    }
+    if (planeta === 'saturno') {
+      if (novaP <6) {
+        explicaca.classList.remove("d-none")
+
+         planetaLugar.textContent ="Saturno está passando por variações intensas devido à sua grande massa e anéis imponentes. Seus efeitos gravitacionais podem causar instabilidade em planetas próximos."
+      }
+      else if (novaP >= 7) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="Saturno, mais distante do Sol, está experimentando um ambiente gelado e mais estável, embora suas luas e anéis ainda causem efeitos gravitacionais significativos."
+      }
+    }
+    if (planeta === 'urano') {
+
+      if (novaP <7) {
+        explicaca.classList.remove("d-none")
+
+         planetaLugar.textContent ="Urano, com sua inclinação extrema e atmosfera gelada, pode causar mudanças dramáticas nos planetas ao redor. O clima do planeta é imprevisível devido à falta de uma estrutura estável"
+      }
+      else if (novaP === 8) {
+        explicaca.classList.remove("d-none")
+
+        planetaLugar.textContent ="Urano está sofrendo com sua temperatura extremamente baixa e sua atmosfera composta por gases densos. A distância do Sol contribui para um clima gelado e instável."
+      }
+    }
+    if (planeta === 'netuno') {
+      if (novaP <8) {
+        explicaca.classList.remove("d-none")
+         planetaLugar.textContent ="Netuno, ao estar mais próximo do Sol, tem sua atmosfera mais aquecida, fazendo com que seus ventos e tempestades se tornem mais intensos. A radiação solar faz com que sua atmosfera se expanda, alterando suas características gasosas e a composição do metano"
+      }
+    }
+}
+
 function verificarLinha(id){
     let idP= document.getElementById(id)
     let instancia = idP.cloneNode(true)
     instancia.setAttribute("data-clone", "true");
-
     let input = document.getElementById(`linha-${id}`);     
     let numeros = parseInt(input.value); 
-
     let orbita = document.getElementById(`o${numeros}`);
+
 
     const todasOrbitas = document.querySelectorAll(".orbitas");
     let instanciasDoMesmoPlaneta = 0;
-  
+
     todasOrbitas.forEach(orb => {
       const clones = orb.querySelectorAll(`#${id}`);
       instanciasDoMesmoPlaneta += clones.length;
+      
     });
-  
-    if (instanciasDoMesmoPlaneta >= 1) {
+    if (instanciasDoMesmoPlaneta >= 1 ) {
       alert("Limite de 1 instância desse planeta atingido!");
       return;
     }
-      orbita.appendChild(instancia);
+    if (orbita.childElementCount >=1 ) {
+       alert("não pode haver 2 planetas na mesma orbita")
+       return
+    }
+    trocarPlaneta(id, numeros)
+    orbita.appendChild(instancia);
     orbita.style.borderBottomWidth='1px'
     orbita.style.borderBottomColor='rgba(255, 255, 255, 0.38)'
     orbita.style.borderBottomStyle='dashed'
-
 }
 function ExcluiLinha(id) {
   let idp = document.getElementById(id)
   let input = document.getElementById(`linha-${id}`)
   let numeros = parseInt(input.value)
   let orbita = document.getElementById(`o${numeros}`);
+  let todasOrbitas = document.querySelectorAll(".orbitas");
 
-  let clone = orbita.querySelector(`#${id}[data-clone="true"]`);
+  let encontrou;
 
-
-  if (clone) {
-  orbita.removeChild(clone)
-  orbita.style.borderBottomWidth=''
-  orbita.style.borderBottomColor=''
-  orbita.style.borderBottomStyle=''
-
-  }else{
-    alert("Esse planeta não está orbita")
+  todasOrbitas.forEach(orbs => {
+    let clone = orbita.querySelector(`#${id}[data-clone="true"]`);
+    if (clone) {
+      orbita.removeChild(clone);
+      orbita.style.borderBottomWidth=''
+      orbita.style.borderBottomColor=''
+      orbita.style.borderBottomStyle=''
+      encontrou = true
+    }
+  });
+  if(!encontrou){
+     alert("Esse planeta não está em nenhuma orbita")
   }
 }
 function abrir(event) {
@@ -54,12 +164,12 @@ function abrir(event) {
     "mercurio": {
       "nome": "Mercúrio",
       "distancia": "57,9 milhões de km",
-      "curiosidades": "É o menor planeta do sistema solar e o mais rápido a orbitar o Sol. Um dia lá dura 176 dias terrestres. Apesar de ser o mais próximo do Sol, não é o mais quente, devido à ausência de atmosfera densa. Não possui Lua."
+      "curiosidades": "É o menor planeta do sistema solar e o mais rápido a orbitar o Sol. Um dia lá dura 176 dias terrestres. Apesar de ser o mais próximo do Sol, não é o mais quente. Devido à ausência de atmosfera densa, não possui Lua."
     },
     "venus": {
       "nome": "Vênus",
       "distancia": "108,2 milhões de km",
-      "curiosidades": "É o planeta mais quente do sistema solar, com temperaturas acima de 460°C por causa de sua atmosfera de dióxido de carbono. Curiosamente, um dia em Vênus é mais longo que seu ano — ele gira tão devagar que o Sol nasce no oeste e se põe no leste. Não tem Lua."
+      "curiosidades": "É o planeta mais quente do sistema solar, com temperaturas acima de 460°C por causa de sua atmosfera de dióxido de carbono. Curiosamente, um dia em Vênus é mais longo que seu ano — ele gira tão devagar que o Sol nasce no oeste e se põe no leste. Não tem Lua (isso é um fato a ser estudado, já que diferente de Mercúrio, é um planeta com massa que conseguiria segurar uma lua)."
     },
     "terra": {
       "nome": "Terra",

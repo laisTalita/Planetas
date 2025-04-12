@@ -23,7 +23,7 @@
         <div class="img"></div>
     </div>
     <main class="d-flex flex-column flex-md-row min-vh-100">
-        <div id="escolha" class="border border-secondary p-2 bg-dark d-flex justify-content-center align-items-center">
+        <div id="escolha" class=" p-2 bg-dark d-flex justify-content-center align-items-center">
           <div class="conteudo-escolha d-flex flex-row flex-md-column gap-4 p-1 justify-content-between align-items-center w-100 p-3">
             <p class="text-white text-center" style="white-space: no-wrap;">
                 Escolha a distancia dos planetas, <span class="text-warning">clique</span> neles para saber mais.
@@ -154,6 +154,10 @@
           <div  id="sol">
             <img src="imagens/sol.png" alt="">
           </div>
+          <div id="explicacao" class="p-3 bg-dark d-none">
+            <p id="explicativa"></p>
+            <button  onclick="fechar_abrir('explicacao')" class="btn btn-warning">Fechar</button>
+          </div>
           <div class="orbitas" id="o1"></div>
           <div class="orbitas" id="o2"></div>
           <div class="orbitas" id="o3"></div>
@@ -171,6 +175,8 @@
             <p><a class="text-info" href="https://spaceplace-nasa-gov.translate.goog/how-many-moons/en/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc" target="_blank"> Fonte: NASA <i class="bi bi-box-arrow-up-right"></i></a></p>
           </div>
         </div>
+
+       
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script/script.js"></script>
