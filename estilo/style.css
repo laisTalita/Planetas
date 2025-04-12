@@ -197,15 +197,17 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#explicacao{
-    z-index: 3;
-    font-size: 0.6em;
+#info, #explicacao{
     border-radius: 3px;
-    min-width: 210px;
-    overflow: hidden;
-    overflow-y: auto;
+    min-width: 290px;
+    font-size: 18px;
     outline: 1px solid rgba(154, 152, 152, 0.329);
     outline-offset: 8px;
+    z-index: 20;
+}
+#info{
+    max-width: 80%;
+    position: absolute;
 }
 #espaco .planetas{
     position: absolute;
@@ -283,6 +285,7 @@ input{
     border: none;
     padding: 3px;
     color: rgb(255, 255, 255);
+    border-bottom:  1px solid white;
 }
 .conteudo-escolha >div{
     background-color: rgba(255, 255, 255, 0.058);
@@ -290,15 +293,7 @@ input{
     width: 99%;
     min-width: 250px;
 }
-#info{
-    width: 290px;
-    z-index: 20;
-    background-color: rgba(7, 7, 7, 0.783);
-    border: 1px solid rgba(255, 255, 255, 0.152);
-}
-#info p{
-    font-size: 18px;
-}
+
 @keyframes estrela1 {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(100deg); }
@@ -341,5 +336,10 @@ input{
 @media (max-width: 768px) {
     #escolha {
         height: 35vh;
+    }
+    #info{ 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

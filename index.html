@@ -34,7 +34,7 @@
                     <img src="imagens/mercury.webp" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-mercurio" id="linha-mercurio" class="linha" max="8" min="0">
+                    <input type="number" name="linha-mercurio" id="linha-mercurio" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('mercurio')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('mercurio')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -46,7 +46,7 @@
                     <img src="imagens/venus.webp" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-venus" id="linha-venus" class="linha" max="8" min="0">
+                    <input type="number" name="linha-venus" id="linha-venus" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('venus')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('venus')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -60,7 +60,7 @@
                   <img src="imagens/terra.webp" alt="Terra">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-terra" id="linha-terra" class="linha" max="8" min="0">
+                    <input type="number" name="linha-terra" id="linha-terra" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('terra')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('terra')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -76,7 +76,7 @@
                     <img src="imagens/marte.png" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-marte" id="linha-marte" class="linha" max="8" min="0">
+                    <input type="number" name="linha-marte" id="linha-marte" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('marte')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('marte')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -93,7 +93,7 @@
                     <img src="imagens/jupiter.webp" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-jupiter" id="linha-jupiter" class="linha" max="8" min="0">
+                    <input type="number" name="linha-jupiter" id="linha-jupiter" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('jupiter')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('jupiter')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -110,7 +110,7 @@
                     <img src="imagens/saturno.webp" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-saturno" id="linha-saturno" class="linha" max="8" min="0">
+                    <input type="number" name="linha-saturno" id="linha-saturno" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('saturno')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('saturno')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -125,7 +125,7 @@
                     <img src="imagens/urano.png" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-urano" id="linha-urano" class="linha" max="8" min="0">
+                    <input type="number" name="linha-urano" id="linha-urano" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('urano')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('urano')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -140,7 +140,7 @@
                     <img src="imagens/netuno.webp" alt="" draggable="true">
                 </div>
                 <div class="text-center d-flex">
-                    <input type="number" name="linha-netuno" id="linha-netuno" class="linha" max="8" min="0">
+                    <input type="number" name="linha-netuno" id="linha-netuno" class="linha" max="8" min="0" placeholder="Numero">
                     <button class="btn text-light" onclick="verificarLinha('netuno')"><i class="bi bi-check-lg"></i></button>
                     <button class="btn text-light" onclick="ExcluiLinha('netuno')"><i class="bi bi-x-lg"></i></button>
                 </div>
@@ -156,7 +156,7 @@
           <div  id="sol">
             <img src="imagens/sol.png" alt="">
           </div>
-          <div id="explicacao" class="p-3 bg-dark d-none">
+          <div id="explicacao" class="p-3 bg-dark d-none ">
             <p id="explicativa"></p>
             <button  onclick="fechar_abrir('explicacao')" class="btn btn-warning">Fechar</button>
           </div>
@@ -169,7 +169,7 @@
           <div class="orbitas" id="o7"></div>
           <div class="orbitas" id="o8"></div>
 
-          <div class="m-3 position-relative p-3 d-none" id="info">
+          <div class="m-3 p-3 d-none bg-dark" id="info">
             <button onclick="fechar_abrir('info')" class="btn btn-danger position-absolute top-0 end-0 m-1 "><i class="bi bi-x-lg"></i></button>
             <p id="nome"></p>
             <p id="distancia"></p>
