@@ -200,7 +200,7 @@ main {
 #info, #explicacao{
     border-radius: 3px;
     min-width: 290px;
-    font-size: 18px;
+    font-size: 18px; 
     outline: 1px solid rgba(154, 152, 152, 0.329);
     outline-offset: 8px;
     z-index: 20;
