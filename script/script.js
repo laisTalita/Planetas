@@ -104,10 +104,12 @@ function trocarPlaneta(planeta, novaP) {
     }
 }
 function verificarLinha(id){
-    let botao= document.querySelectorAll(".x")
     let idP= document.getElementById(id)
     let instancia = idP.cloneNode(true)
-    let input = document.getElementById(`linha-${id}`);     
+    let input = document.getElementById(`linha-${id}`); 
+    let linhaCont = input.parentElement
+    let botao = linhaCont.querySelector("button.x")
+
     let numeros = parseInt(input.value); 
     let orbita = document.getElementById(`o${numeros}`);
     const todasOrbitas = document.querySelectorAll(".orbitas");
@@ -131,16 +133,14 @@ function verificarLinha(id){
       orbita.style.borderBottomColor='rgba(255, 255, 255, 0.38)'
       orbita.style.borderBottomStyle='dashed'
 
-      botao.forEach(but => {
-        but.addEventListener("click",function() {
-          if (but) {
+        botao.addEventListener("click",function() {
+          if (botao) {
             orbita.removeChild(instancia);
             orbita.style.borderBottomWidth=''
             orbita.style.borderBottomColor=''
             orbita.style.borderBottomStyle=''
           }
         })
-      });  
   }
 function abrir(event) {
   const categorias={
