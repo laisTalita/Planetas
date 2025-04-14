@@ -25,9 +25,13 @@
     <main class="d-flex flex-column flex-md-row min-vh-100">
         <div id="escolha" class=" p-2 bg-dark d-flex justify-content-center align-items-center">
           <div class="conteudo-escolha d-flex flex-row flex-md-column gap-4 p-1 justify-content-between align-items-center w-100 p-3">
-            <p class="text-white text-center" style="white-space: no-wrap;">
-                Escolha a distância dos planetas, <span class="text-warning">clique</span> neles para saber mais.
-            </p> 
+            <button onclick="fechar_abrir('informacao')" class=" btn btn-dark"><i class="bi bi-info-square"></i> Informação</button>
+             <aside id="informacao" class="d-none">
+                <p> Clique nos planetas para saber mais sobre eles. Escolha o número da órbita e clique no ícone "<i class="bi bi-check-lg"></i>" para adicioná-los, ou remova-os clicando no ícone "<i class="bi bi-x-lg"></i>". </p>
+                <p>
+                    Feito por: Lais Talita
+                </p>
+             </aside>      
             <div class="d-flex flex-column align-items-center  ">
                 <p class="text-end">Mercúrio</p>
                 <div class="planetas mb-3" id="mercurio">
@@ -145,8 +149,6 @@
                     <button class="btn text-light x"><i class="bi bi-x-lg"></i></button>
                 </div>
             </div>  
-
-            <p> Feito por: Lais Talita</p>
           </div>
         </div>
         <div class="align-self-center fs-3 m-1 p-1 icone_seta" onclick="fechar_abrir('escolha')">

@@ -293,6 +293,10 @@ input{
     width: 99%;
     min-width: 250px;
 }
+#informacao {
+    min-width: 260px;
+  }
+  
 
 @keyframes estrela1 {
     0% { transform: rotate(0deg); }
@@ -335,7 +339,7 @@ input{
 }
 @media (max-width: 768px) {
     #escolha {
-        height: 35vh;
+        height: 25vh;
     }
     #info{ 
         top: 50%;
