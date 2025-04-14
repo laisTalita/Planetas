@@ -2,20 +2,19 @@ function fechar_abrir(id) {
   const el = document.getElementById(id);
   el.classList.toggle("d-none");
 }
-
 function trocarPlaneta(planeta, novaP) {
   let planetaLugar= document.getElementById("explicativa")
   let explicaca = document.getElementById("explicacao")
-  const tipos={
-    "mercurio":"rochoso",
-    "venus": "rochoso",
-    "terra": "rochoso",
-    "marte": "rochoso",
-    "jupiter": "gasoso",
-    "saturno": "gasoso",
-    "urano": "gasoso",
-    "netuno": "gasoso"
-  }
+  const tipos=[
+    "mercurio",
+    "venus",
+    "terra",
+    "marte",
+    "jupiter",
+    "saturno",
+    "urano",
+    "netuno"
+  ]
   const tipo = tipos[planeta]
 
     if (novaP !=1 && planeta ==='mercurio') {
@@ -104,61 +103,45 @@ function trocarPlaneta(planeta, novaP) {
       }
     }
 }
-
 function verificarLinha(id){
+    let botao= document.querySelectorAll(".x")
     let idP= document.getElementById(id)
     let instancia = idP.cloneNode(true)
-    instancia.setAttribute("data-clone", "true");
     let input = document.getElementById(`linha-${id}`);     
     let numeros = parseInt(input.value); 
     let orbita = document.getElementById(`o${numeros}`);
-
-
     const todasOrbitas = document.querySelectorAll(".orbitas");
+
     let instanciasDoMesmoPlaneta = 0;
-
     todasOrbitas.forEach(orb => {
-      const clones = orb.querySelectorAll(`#${id}`);
-      instanciasDoMesmoPlaneta += clones.length;
-      
+      let clone = orb.querySelectorAll(`#${id}`)
+      instanciasDoMesmoPlaneta +=clone.length
     });
-    if (instanciasDoMesmoPlaneta >= 1 ) {
-      alert("Limite de 1 instância desse planeta atingido!");
-      return;
+    if (instanciasDoMesmoPlaneta >=1) {
+      alert("não pode haver mais intancias desse planeta")
+      return
     }
-    if (orbita.childElementCount >=1 ) {
-       alert("não pode haver 2 planetas na mesma orbita")
-       return
+    if (orbita.childElementCount >=1) {
+      alert("não pode haver mais planetas nessa orbita")
+      return
     }
-    trocarPlaneta(id, numeros)
-    orbita.appendChild(instancia);
-    orbita.style.borderBottomWidth='1px'
-    orbita.style.borderBottomColor='rgba(255, 255, 255, 0.38)'
-    orbita.style.borderBottomStyle='dashed'
-}
-function ExcluiLinha(id) {
-  let idp = document.getElementById(id)
-  let input = document.getElementById(`linha-${id}`)
-  let numeros = parseInt(input.value)
-  let orbita = document.getElementById(`o${numeros}`);
-  let todasOrbitas = document.querySelectorAll(".orbitas");
+      orbita.appendChild(instancia);
+      trocarPlaneta(id,numeros)
+      orbita.style.borderBottomWidth='1px'
+      orbita.style.borderBottomColor='rgba(255, 255, 255, 0.38)'
+      orbita.style.borderBottomStyle='dashed'
 
-  let encontrou;
-
-  todasOrbitas.forEach(orbs => {
-    let clone = orbita.querySelector(`#${id}[data-clone="true"]`);
-    if (clone) {
-      orbita.removeChild(clone);
-      orbita.style.borderBottomWidth=''
-      orbita.style.borderBottomColor=''
-      orbita.style.borderBottomStyle=''
-      encontrou = true
-    }
-  });
-  if(!encontrou){
-     alert("Esse planeta não está em nenhuma orbita")
+      botao.forEach(but => {
+        but.addEventListener("click",function() {
+          if (but) {
+            orbita.removeChild(instancia);
+            orbita.style.borderBottomWidth=''
+            orbita.style.borderBottomColor=''
+            orbita.style.borderBottomStyle=''
+          }
+        })
+      });  
   }
-}
 function abrir(event) {
   const categorias={
     "mercurio": {
@@ -214,7 +197,6 @@ function abrir(event) {
   nome.textContent = planet.nome;
   distancia.textContent= planet.distancia;
   curiosidade.textContent = planet.curiosidades
-
 }
 let planeta = document.querySelectorAll(".planetas")
 planeta.forEach(element => {
