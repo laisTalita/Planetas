@@ -119,7 +119,7 @@ function verificarLinha(id){
       let clone = orb.querySelectorAll(`#${id}`)
       instanciasDoMesmoPlaneta +=clone.length
     });
-    if (instanciasDoMesmoPlaneta >=1) {
+    if (instanciasDoMesmoPlaneta >=2) {
       alert("não pode haver mais intancias desse planeta")
       return
     }
@@ -140,8 +140,10 @@ function verificarLinha(id){
             orbita.style.borderBottomColor=''
             orbita.style.borderBottomStyle=''
           }
-        })
-  }
+        })    
+
+  }   
+
 function abrir(event) {
   const categorias={
     "mercurio": {
@@ -202,4 +204,15 @@ let planeta = document.querySelectorAll(".planetas")
 planeta.forEach(element => {
   element.addEventListener("click",abrir)
 });
-
+document.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    const elementoLinha = document.activeElement;
+      if (elementoLinha && elementoLinha.classList.contains('linha')) {
+        const id = elementoLinha.id.replace('linha-','')
+        let botao = document.querySelector(`#linha-${id}`).parentElement.querySelector('.acrescentar'); 
+      if (botao) {
+        botao.click(); 
+      }
+    }
+  }
+});
