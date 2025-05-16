@@ -332,6 +332,13 @@ input{
     .icone_seta {
         transform: rotate(90deg) !important;
     }
+    #linha_planetas{
+        display: flex;
+        flex-direction: row ;
+    }
+    #linha_planetas > article{
+        margin: 0px 10px;
+    }
 }
 @media (min-width: 768px) {
     #escolha {
